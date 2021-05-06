@@ -15,7 +15,7 @@
   "homepage": "https://github.com/DemandHub/react-kichiri#readme",
   "dependencies": {
     "axios": "0.17.0",
-    "underscore": "1.9.0",
+    "underscore": "1.12.1",
     "with-query": "1.1.2",
     "js-yaml": "3.13.1"
   },
