@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const Utils = {
 
@@ -13,7 +13,11 @@ const Utils = {
 		var properties = path.match(/[^{}]+(?=\})/g) || [];
         for (var i = 0; i < properties.length; i++) {
             var property = properties[i];
-            path = path.replace('{' + property + '}', data[property]);
+            if (data instanceof FormData) {
+		path = path.replace('{' + property + '}', data.get(property));
+	    } else {
+		path = path.replace('{' + property + '}', data[property]);
+	    }
         }
 
         return path;
